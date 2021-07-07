@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--estilos y tipografias-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--link al archivo js-->
+    <script defer src="AppDamas.js"></script>
+    <title>CheckersGame</title>
+</head>
+<body>
+    <main>
+       
+    <!--Div contenedor-->
+    <div class="container">
+
+    <!--Div para tablero-->
+        <div class="column-1 box">
+    <table>
+            
+    <!--CupHead-Pieza Rojo-->
+            <tr>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="0"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="1"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="2"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="3"></p></td>
+            </tr>
+            <tr>
+                <td><p class="red-piece" id="4"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="5"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="6"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="7"></p></td>
+                <td class="noPieceHere"></td>
+            </tr>
+            <tr>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="8"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="9"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="10"></p></td>
+                <td class="noPieceHere"></td>
+                <td><p class="red-piece" id="11"></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+            </tr>
+            <tr>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+            </tr>
+            <!--Mugman-Pieza Azul-->
+            <tr>
+                <td><span class="blue-piece" id="12"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="13"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="14"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="15"></span></td>
+                <td class="noPieceHere"></td>
+            </tr>
+            <tr>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="16"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="17"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="18"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="19"></span></td>
+            </tr>
+            <tr>
+                <td><span class="blue-piece" id="20"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="21"></span></td>
+                <td class="noPieceHere">
+                <td><span class="blue-piece" id="22"></span></td>
+                <td class="noPieceHere"></td>
+                <td><span class="blue-piece" id="23"></span></td>
+                <td class="noPieceHere"></td>
+            </tr>
+        </table>
+        </div>
+
+        <!--Div para turnos jugadores-->
+        <!--P id para puntos jugadores-->
+        <div class="column-2 box">
+            <div class="red-turn-text">
+                Cuphead Turn
+                <p id="PuntosCupHead">0</p>  
+                <img src="images/cuphead.png">
+            </div>
+            
+           
+            <p id="divider">|</p>
+            <div class="blue-turn-text">
+                Mugman Turn
+                <p id="PuntosMugman">0</p>
+                <img src="images/mugman.png">
+            </div>
+        </div>
+        </div>
+    
+    </main>
+    
+</body>
+</html>
