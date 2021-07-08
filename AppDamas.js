@@ -80,10 +80,11 @@ function givePiecesEventListeners() {
 }
 
 
-/* Inicio de la funciones en cadena*/
+
 
 /*Si es el turno de rojo a playerPieces le asigno redPieces y sino es el turno le asigno a  */
 /*Llamamos a la funcion removeCellonclick y la funcion resetBorders */
+/* Inicio de la funciones en cadena*/
 function getPlayerPieces() {
     if (turn) {
         playerPieces = redsPieces;
@@ -323,6 +324,7 @@ function changeData(indexOfBoardPiece, modifiedIndex, removePiece) {
         board[removePiece] = null;
         if (turn && selectedPiece.pieceId < 12) {
             cells[removePiece].innerHTML = "";
+            console.log(cells.removePiece);
             blueScore++
             console.log(blueScore);
             counterPoints();
@@ -365,6 +367,7 @@ function checkForWin(){
       redScore++;
       redTurnText[i].style.color = "black";
       blueckTurntext[i].style.display = "none"; 
+      console.log(blueckTurntext[i]);
       if (redScore==12) {
         redTurnText[i].textContent = "BRAVO CupHead Wins"; 
       }
@@ -372,11 +375,12 @@ function checkForWin(){
         
     }
     } else if (redScore === counterPoints) {
-        dividir.style.display = "none";
+        divider.style.display = "none";
         for (let i = 0; i < blueckTurntext.length; i++) {
-            blueScore++
+            blueScore++;
             blueckTurntext[i].style.color = "black";
             redTurnText[i].style.display = "none";
+            console.log(redTurnText[i]);
             if (blueScore==12) {
             blueckTurntext[i].textContent = "BRAVO Mugman Wins";
             }
@@ -392,13 +396,15 @@ function checkForWin(){
 function counterPoints(){
 
 if (getPlayerPieces) {
+console.log(getPlayerPieces)
 
-bluecksPieces.innerHTML = blueScore;
 PuntosCupHead.innerHTML = blueScore;
+console.log(blueScore);
 }
-else {
-    redsPieces.innerHTML = redScore;
+if(getPlayerPieces)  {
+    
     PuntosMugman.innerHTML = redScore;
+    console.log(redScore);
 }
 
 }
