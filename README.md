@@ -8,4 +8,7 @@ Juego de Damas desarrollado en los lenguajes HTML5,CSS Y JavaScript Su diseño e
 funciones para mover las fichas,
 seleccionar fichas por turno y jugador actual, 
 capturar fichas,convertirse en rey hasta fin de la partida
+5. LocalStorage: Guardado de partida y puntaje.
+
+🎲 Disponible ahora en [Github Pages](https://carla2807.github.io/Checkers2021/).
 
