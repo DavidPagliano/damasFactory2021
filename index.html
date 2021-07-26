@@ -7,22 +7,38 @@
     <!--estilos y tipografias-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ac19bcbef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
     <!--link al archivo js-->
     <script defer src="AppDamas.js"></script>
     <title>CheckersGame</title>
 </head>
 <body>
-    <main>
-       
+   
+    <!--Header con la clase header que es el contenedor-->
+   <header class="header">
+        <a href="index.html" class="logo">Checkers</a>
+    <input class="menu-btn" type="checkbox" 
+    id="menu-btn">
+    <label class="menu-icon" for="menu-btn">
+    <span class="navicon" ></span></label>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Contact</a></li>
+        <li><a href="#">About the Game</a></li>   
+    </ul>
+    
+   </header>
+ 
     <!--Div contenedor-->
     <div class="container">
-
     <!--Div para tablero-->
         <div class="column-1 box">
-    <table>
+    <table id="table">
             
     <!--CupHead-Pieza Rojo-->
+   
             <tr>
                 <td class="noPieceHere"></td>
                 <td><p class="red-piece" id="0"></p></td>
@@ -104,29 +120,34 @@
                 <td><span class="blue-piece" id="23"></span></td>
                 <td class="noPieceHere"></td>
             </tr>
+        
         </table>
         </div>
 
         <!--Div para turnos jugadores-->
         <!--P id para puntos jugadores-->
+        
         <div class="column-2 box">
             <div class="red-turn-text">
                 Cuphead Turn
                 <p id="PuntosCupHead">0</p>  
                 <img src="images/cuphead.png">
             </div>
-            
-           
             <p id="divider">|</p>
             <div class="blue-turn-text">
                 Mugman Turn
                 <p id="PuntosMugman">0</p>
                 <img src="images/mugman.png">
             </div>
+        </div>   
+       
         </div>
-        </div>
-    
+      
     </main>
-    
+    <!--Game zone-->
+    <button onclick="resetBoard()">RestartGame</button>
+    <input type="button" id="save" class="button" value="Save Game" />
+    <input type="button" id="load" class="button" value="Load Game"/>
 </body>
+
 </html>
