@@ -1,7 +1,7 @@
 /*Inicializar datos del juego,declaro matriz para representar tablero */
 /*Se declaran 64 items array  que representan las celdas, los numeros hardcodeados son los ids de las piezas*/
 
-const board = [
+var board = [
     null, 0, null, 1, null, 2, null, 3,
     4, null, 5, null, 6, null, 7, null,
     null, 8, null, 9, null, 10, null, 11,
@@ -17,16 +17,22 @@ const board = [
 let findPiece = function (pieceId) {
     let parsed = parseInt(pieceId);
     return board.indexOf(parsed);
-};
 
-/* Establecer las variables para referenciar  */
-/* Uso del metodo querySelectorAll  */
-const cells = document.querySelectorAll("td");
+    
+}
+
+
+
+/* Establecer las variables para referenciar las cosas en el DOM */
+/* Uso del metodo querySelectorAll para seleccionar todos los casilleros */
+/* const redTurnText y const blueckTurntext para ver el turno del jugador*/
+let cells = document.querySelectorAll("td");
 let redsPieces = document.querySelectorAll("p");
 let bluecksPieces = document.querySelectorAll("span")
 const redTurnText = document.querySelectorAll(".red-turn-text");
 const blueckTurntext = document.querySelectorAll(".blue-turn-text");
-const divider = document.querySelector("#divider")
+const divider = document.querySelector("#divider");
+
 
 
 /* Definir las propiedades del jugador  */
@@ -39,6 +45,8 @@ let blueScore = 0;
 let playerPieces;
 let PuntosCupHead = document.querySelector('#PuntosCupHead');
 let PuntosMugman = document.querySelector('#PuntosMugman');
+
+
 
 /*Datos al servidor */ 
 var datos =[
@@ -65,6 +73,7 @@ let selectedPiece = {
     minusEighteenthSpace: false
 }
 
+
 /*Inicializar Eventos Escucha*/
 /*Crear funcion,con for iterar para detectar evento click */
 function givePiecesEventListeners() {
@@ -77,9 +86,8 @@ function givePiecesEventListeners() {
             bluecksPieces[i].addEventListener("click", getPlayerPieces);
         }
     }
+
 }
-
-
 
 
 /*Si es el turno de rojo a playerPieces le asigno redPieces y sino es el turno le asigno a  */
@@ -93,6 +101,7 @@ function getPlayerPieces() {
     }
     removeCellonclick();
     resetBorders();
+    
 }
 
 /* La funcion realiza loop,itera con un for todas las celdas en el tablero*/
@@ -112,7 +121,7 @@ function resetBorders() {
     getSelectedPiece();
 }
 
-/* La funcion reseta todas las propiedades del objeto selectedPiece */
+/* La funcion reseta todas las propiedades del objeto  */
 function resetSelectedPieceProperties() {
     selectedPiece.pieceId = -1;
     selectedPiece.pieceId = -1;
@@ -310,7 +319,7 @@ function makeMove(number) {
     }
 }
 
-
+/* cambia nombre jugador*/ 
 function changeData(indexOfBoardPiece, modifiedIndex, removePiece) {
     board[indexOfBoardPiece] = null;
     board[modifiedIndex] = parseInt(selectedPiece.pieceId);
@@ -425,6 +434,7 @@ function changePlayer() {
         }
     }
     givePiecesEventListeners();
+    
 }
 
 //Creo la funcion para enviar por metodo fetch
@@ -442,3 +452,105 @@ function SendData(url, objFicha) {
   }
 
 givePiecesEventListeners();
+
+//localStorage
+
+var SaveButton = document.getElementById('save')
+var LoadButton = document.getElementById('load')
+
+SaveButton.addEventListener('click', SaveCheckpoint)
+LoadButton.addEventListener('click', LoadCheckpoint ) 
+
+
+function SaveCheckpoint() {
+    let tablero = JSON.stringify(board)
+    localStorage.setItem("board", tablero)
+    localStorage.setItem("bluescore" , blueScore);
+    localStorage.setItem("redscore", redScore);
+    alert("Su partida ha sido guardada.");
+   
+}
+
+/*Para cargar */ 
+function LoadCheckpoint(){
+    tablero = JSON.parse(localStorage.getItem("board"));
+    board = tablero;
+    LoadBoardData(board);
+    blueScore = parseInt(localStorage.getItem("bluescore"));
+    PuntosCupHead.innerHTML = blueScore;
+
+    redScore = parseInt(localStorage.getItem("redscore"));
+    PuntosMugman.innerHTML = redScore;
+    alert("Su partida ha sido cargada");
+}   // hacer un if que sino existe localStorage que le mande un mensaje que no existe partida guardada
+
+
+/* Funcion para cargar y dibujar tablero*/ 
+function LoadBoardData(board)
+{
+    var table = document.getElementById('table');
+    table.innerHTML = "";
+    for (let i = 0; i < 8; i++) {
+       var row = document.createElement("tr");
+
+        for (let j = 0; j < 8; j++) {
+           var cell = document.createElement("td");
+
+           var cellNumber = i*8+j
+           var cellData = board[cellNumber];
+           if (cellData == null) {
+            if ((cellNumber % 2== 0 && i % 2 == 0) || (cellNumber % 2 == 1 && i % 2 == 1)) {
+                cell.className = "noPieceHere";
+                
+            }
+           
+           
+           } else{
+               if (cellData >= 0  && cellData < 12) {
+                   var span = document.createElement("span");
+                   span.className = "red-piece";
+                   span.id = cellData;
+                   cell.appendChild(span);
+                    
+               }else{
+                var span = document.createElement("span");
+                   span.className = "blue-piece";
+                   span.id = cellData;
+                   cell.appendChild(span);
+                  
+               }
+           }
+           
+           row.appendChild(cell);
+            
+        }
+       table.appendChild(row);
+        
+    }
+    
+   
+}
+
+
+var loadSavedGamesData = function() {
+    listSection = arrGameLI.slice(start, end);
+
+    for(var i = 0; i < savedGames.length; i++) {
+        p1HTML[i].innerHTML = savedGames[i].p1.name;
+        p2HTML[i].innerHTML = savedGames[i].p2.name;
+        if(savedGames[i].p3 != null) {
+            p3HTML[i].className = 'game-info p3';
+            p3HTML[i].innerHTML = savedGames[i].p3.name;
+        }
+        dateHTML[i].innerHTML =  savedGames[i].date;
+    }
+
+    for(var l = 0; l < savedGames.length; l++) {
+        gameLI[l].className = 'game hidden';
+    }
+
+    for(var j = 0; j < listSection.length; j++) {
+        listSection[j].className = 'game';
+    }
+    displayButtons();
+}
