@@ -1,6 +1,6 @@
 Checkers2021🎮💻- Made by CARLA MASSAT
 Juego de Damas desarrollado en los lenguajes HTML5,CSS Y JavaScript Su diseño esta inspirado en la animacion de los años ´30 y en el videojuego de CupHead perteneciente al género run and gun. Los dibujos animados de los años 30 presentaban a los personajes caricaturizados, exagerando los gestos manteniendo una animación constante que le daba al conjunto un dinamismo particular.
-#Commits:
+
 1.	HTML: creacion de la estructura del juego
 2.	Estilos CSS: implementacion del diseño con colores, fuentes, tamaños,imagenes propios
 3.	Flexbox-Media Queries: visualizacion para cualquier dispositivo
@@ -8,4 +8,6 @@ Juego de Damas desarrollado en los lenguajes HTML5,CSS Y JavaScript Su diseño e
 funciones para mover las fichas,
 seleccionar fichas por turno y jugador actual, 
 capturar fichas,convertirse en rey hasta fin de la partida
+5. LocalStorage: Guardado de partida y puntaje.
+🎲 Disponible ahora en [Github Pages](https://carla2807.github.io/Checkers2021/).
 
