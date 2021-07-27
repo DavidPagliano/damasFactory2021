@@ -9,5 +9,9 @@ funciones para mover las fichas,
 seleccionar fichas por turno y jugador actual, 
 capturar fichas,convertirse en rey hasta fin de la partida
 5. LocalStorage: Guardado de partida y puntaje.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 121a7ddcb22cdcd8e1388ae7aecab093bf40d769
 🎲 Disponible ahora en [Github Pages](https://carla2807.github.io/Checkers2021/).
 
