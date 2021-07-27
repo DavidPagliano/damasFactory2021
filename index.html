@@ -124,23 +124,32 @@
         </table>
         </div>
 
-        <!--Div para turnos jugadores-->
-        <!--P id para puntos jugadores-->
-        
-        <div class="column-2 box">
-            <div class="red-turn-text">
-                Cuphead Turn
-                <p id="PuntosCupHead">0</p>  
-                <img src="images/cuphead.png">
-            </div>
-            <p id="divider">|</p>
-            <div class="blue-turn-text">
-                Mugman Turn
-                <p id="PuntosMugman">0</p>
-                <img src="images/mugman.png">
-            </div>
-        </div>   
+    
+        <!--Div columna 2-->
        
+        <div class="column-2 box">
+    <!--Div para turnos jugadores-->
+            <div class="red-turn-text"> 
+                <!--Ingresar nombre jugador 1-->
+                <p class="Player1">Player 1- Cuphead</p>
+           <!--P id para puntos jugadores-->    
+                <p id="PuntosCupHead">0</p>
+                <img src="images/cuphead.png"> 
+            </div>
+            <hr>
+            <p id="divider">|</p>
+
+            <div class="blue-turn-text">
+                <!--Ingresar nombre jugador 2-->
+                <p class="Player2">Player 2-Mugman</p>
+               
+                <p id="PuntosMugman">0</p> 
+                <img src="images/mugman.png"> 
+            </div>
+            <hr>
+            
+        </div>
+             
         </div>
       
     </main>
@@ -148,6 +157,10 @@
     <button onclick="resetBoard()">RestartGame</button>
     <input type="button" id="save" class="button" value="Save Game" />
     <input type="button" id="load" class="button" value="Load Game"/>
+    <button type="button" class="butn" onclick="editNames()">
+        Edit Names</button>
+
+    
 </body>
 
 </html>
