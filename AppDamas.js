@@ -33,6 +33,8 @@ const redTurnText = document.querySelectorAll(".red-turn-text");
 const blueckTurntext = document.querySelectorAll(".blue-turn-text");
 const divider = document.querySelector("#divider");
 
+var player1= "Player 1";
+var player2 ="Player 2";
 
 
 /* Definir las propiedades del jugador  */
@@ -461,12 +463,14 @@ var LoadButton = document.getElementById('load')
 SaveButton.addEventListener('click', SaveCheckpoint)
 LoadButton.addEventListener('click', LoadCheckpoint ) 
 
-
+/* Para guardar */
 function SaveCheckpoint() {
     let tablero = JSON.stringify(board)
     localStorage.setItem("board", tablero)
     localStorage.setItem("bluescore" , blueScore);
     localStorage.setItem("redscore", redScore);
+    localStorage.setItem("Player 1", player1);
+    localStorage.setItem("Player 2", player2);
     alert("Su partida ha sido guardada.");
    
 }
@@ -482,7 +486,18 @@ function LoadCheckpoint(){
     redScore = parseInt(localStorage.getItem("redscore"));
     PuntosMugman.innerHTML = redScore;
     alert("Su partida ha sido cargada");
+
+     localStorage.getItem("Player 1");
+     localStorage.getItem("Player 2");
+    
+
+    if ("board" && "bluescore" && "redscore" && "Player 1" && "Player 2" in localStorage) { 
+        alert("Se encontro juego");
+    }
+   
+  
 }   // hacer un if que sino existe localStorage que le mande un mensaje que no existe partida guardada
+
 
 
 /* Funcion para cargar y dibujar tablero*/ 
@@ -553,4 +568,15 @@ var loadSavedGamesData = function() {
         listSection[j].className = 'game';
     }
     displayButtons();
+}
+
+
+//Funcion para cambiar nombre jugadores
+function editNames(){
+    player1 = prompt("Player One enter your name");
+    player2 = prompt("Player Two enter your name");
+
+    document.querySelector("p.Player1").innerHTML = player1;
+    document.querySelector("p.Player2").innerHTML = player2;
+
 }
