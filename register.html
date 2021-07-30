@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <script src="https://kit.fontawesome.com/1ac19bcbef.js" crossorigin="anonymous"></script>
-    <script src="register.js"></script>
+    <script src="js/contact.js"></script>
     <title>Contact Us</title>
 </head>
 <body class="contact">
@@ -20,21 +20,21 @@ id="menu-btn">
 <label class="menu-icon" for="menu-btn">
 <span class="navicon" ></span></label>
 <ul class="menu">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Home</a></li>
     <li><a href="register.html">Contact</a></li>
-    <li><a href="#">About the Game</a></li>  
+    <li><a href="rules.html">About the Game</a></li>  
 </ul>
 </header>
 
 <div class="contact-section">
     <h3>Register</h3>
 
-    <form class="contact-form" action="mailto:emailid@example.com" method="post" enctype="text/plain">
-        <input type="text" class="contact-form-text" name="nombre" id="nombre" placeholder="Name">
-        <input type="text" class="contact-form-text" name="apellido" id="apellido" placeholder="Last Name">
-        <input type="email" class="contact-form-text" name="correo" id="correo" placeholder="Email">
-        <textarea class="contact-form-text"  name="comentario" id="comentario"placeholder="Message"></textarea>
-        <input id="contact-form-btn" type="submit" class="contact-form-btn" value="SEND" >
+    <form class="contact-form" action="" id="form" >
+        <input type="text" class="entry input-text" name="nombre" id="nombre" placeholder="Name and Last Name">
+        <input type="email" class="entry input-email" name="email" id="email" placeholder="Email">
+        <textarea class="entry textarea"  name="message" id="message" placeholder="Message"></textarea>
+
+        <button id="submit" type="button">Send</button>
 
     </form>
 </div>
