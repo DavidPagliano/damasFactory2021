@@ -33,8 +33,9 @@ const redTurnText = document.querySelectorAll(".red-turn-text");
 const blueckTurntext = document.querySelectorAll(".blue-turn-text");
 const divider = document.querySelector("#divider");
 
-var player1= "Player 1";
-var player2 ="Player 2";
+
+
+
 
 
 /* Definir las propiedades del jugador  */
@@ -469,10 +470,10 @@ function SaveCheckpoint() {
     localStorage.setItem("board", tablero)
     localStorage.setItem("bluescore" , blueScore);
     localStorage.setItem("redscore", redScore);
-    localStorage.setItem("Player 1", player1);
-    localStorage.setItem("Player 2", player2);
     alert("Su partida ha sido guardada.");
    
+  window.localStorage["player1"] = document.getElementById("player1").value;
+  window.localStorage["player2"] = document.getElementById("player2").value;
 }
 
 /*Para cargar */ 
@@ -487,16 +488,19 @@ function LoadCheckpoint(){
     PuntosMugman.innerHTML = redScore;
     alert("Su partida ha sido cargada");
 
-     localStorage.getItem("Player 1");
-     localStorage.getItem("Player 2");
-    
+    document.getElementById("player1").value = window.localStorage["player1"];
+    document.getElementById("player2").value=window.localStorage["player2"];
 
-    if ("board" && "bluescore" && "redscore" && "Player 1" && "Player 2" in localStorage) { 
+    
+    
+   
+
+    if ("board" && "bluescore" && "redscore" && "player1" && "player2" in localStorage) { 
         alert("Se encontro juego");
     }
    
   
-}   // hacer un if que sino existe localStorage que le mande un mensaje que no existe partida guardada
+}  
 
 
 
@@ -540,10 +544,10 @@ function LoadBoardData(board)
             
         }
        table.appendChild(row);
-        
+       
     }
-    
    
+    
 }
 
 
@@ -568,15 +572,13 @@ var loadSavedGamesData = function() {
         listSection[j].className = 'game';
     }
     displayButtons();
+    
+    
 }
 
+// Para resetear tablero
 
-//Funcion para cambiar nombre jugadores
-function editNames(){
-    player1 = prompt("Player One enter your name");
-    player2 = prompt("Player Two enter your name");
-
-    document.querySelector("p.Player1").innerHTML = player1;
-    document.querySelector("p.Player2").innerHTML = player2;
-
+function restartGame() {
+    location.reload();
 }
+
