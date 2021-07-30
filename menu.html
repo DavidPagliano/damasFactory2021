@@ -1,20 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
-    <title>Menu</title>
-</head>
-<body>
-    <section id="menu">
-        <div class="menu">
-            <h1 class="title">CHECKERS</h1>
-            <a href="index.html" class="btn-menu" type="button">Play</a>
-            <a href="rules.html" class="btn-menu" type="button">How to Play</a>
-            <a href="register.html" class="btn-menu" type="button">Contact</a>
-        </div>
-    </section>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--estilos y tipografias-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1ac19bcbef.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/styles2.css">
+        <link rel="stylesheet" type="text/css" href="css/players.css">
+        
+        <!--link al archivo js-->
+        <script defer src="js/AppDamas.js"></script>
+        <title>CheckersGame</title>
+    </head>
+    <body>
+       
+        <!--Header con la clase header que es el contenedor-->
+       <header class="header">
+            <a href="index.html" class="logo">Checkers</a>
+        <input class="menu-btn" type="checkbox" 
+        id="menu-btn">
+        <label class="menu-icon" for="menu-btn">
+        <span class="navicon" ></span></label>
+        <ul class="menu">
+            <li><a href="menu.html">Home</a></li>
+            <li><a href="register.html">Contact</a></li>
+            <li><a href="rules.html">About the Game</a></li>   
+        </ul>
+       
+       </header>
+      
+        <!--Div contenedor-->
+        <div class="container">
+            
+        <!--Div para tablero-->
+            <div class="column-1 box">
+        <table id="table">
+                
+        <!--CupHead-Pieza Rojo-->
+       
+                <tr>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="0"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="1"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="2"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="3"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="red-piece" id="4"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="5"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="6"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="7"></p></td>
+                    <td class="noPieceHere"></td>
+                </tr>
+                <tr>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="8"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="9"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="10"></p></td>
+                    <td class="noPieceHere"></td>
+                    <td><p class="red-piece" id="11"></p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                </tr>
+                <tr>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                    <td class="noPieceHere"></td>
+                    <td></td>
+                </tr>
+                <!--Mugman-Pieza Azul-->
+                <tr>
+                    <td><span class="blue-piece" id="12"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="13"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="14"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="15"></span></td>
+                    <td class="noPieceHere"></td>
+                </tr>
+                <tr>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="16"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="17"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="18"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="19"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="blue-piece" id="20"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="21"></span></td>
+                    <td class="noPieceHere">
+                    <td><span class="blue-piece" id="22"></span></td>
+                    <td class="noPieceHere"></td>
+                    <td><span class="blue-piece" id="23"></span></td>
+                    <td class="noPieceHere"></td>
+                </tr>
+            
+            </table>
+            </div>
+    
+        
+         
+            <!--Div columna 2-->
+           
+            <div class="column-2 box">
+                 <!--Ingresar nombres jugadores-->
+                <div class="players">
+                    <!-- player 1 -->
+                    <div class="inputBox">
+                      <div class="p">Player One</div>
+                      <input id="player1" type="text"/>
+                      
+                    </div>
+                  <!-- player 2 -->
+                    <div class="inputBox">
+                      <div class="p">Player Two</div>
+                      <input id="player2" type="text"/>
+                    </div>
+                    
+                    
+                  </div> 
+                
+        <!--Div para turnos jugadores-->
+       
+            </div>  
+            <img src="images/cuphead.png"> 
+            <div class="red-turn-text"> 
+                
+               
+                <p>Cuphead</p>
+           <!--P id para puntos jugadores-->    
+                <p id="PuntosCupHead">0</p>
+               
+            </div>
+            
+            <p id="divider">|</p>
+            <img src="images/mugman.png">
+            <div class="blue-turn-text">
+                <p>Mugman</p>
+               
+                <p id="PuntosMugman">0</p>
+                           
+            </div>
+            
+            </div>
+            
+        </main>
+        
+        <!--Game zone-->
+        
+        <button onclick="restartGame()"class="butn">Restart Game</button>
+        <input type="button" id="save" class="butn" value="Save Game" />
+        <input type="button" id="load" class="butn" value="Load Game"/>
+        
+    </body>
 </html>
