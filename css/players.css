@@ -1,0 +1,19 @@
+.players{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: block;
+    width: 0px;
+
+}
+
+#player1,#player2{
+    border-radius: 2px;
+    border: 2px solid #B20000;
+}
+
+
+#player2{
+    border-radius: 2px;
+    border: 2px solid #7092BE;
+}
+
