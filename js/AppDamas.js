@@ -371,7 +371,7 @@ function removeEventListeners() {
     checkForWin();
 }
 
-/*La funcion permite saber los puntos de cada jugador */
+/*La funcion permite saber el ganador que llama a counterPoints*/
 function checkForWin(){
     if (blueScore === counterPoints) {
     divider.style.display  = "none";
@@ -382,7 +382,7 @@ function checkForWin(){
       console.log(blueckTurntext[i]);
       
       if(redScore==12){
-        redTurnText[i].textContent = alert("BRAVO CupHead Wins");
+        //redTurnText[i].textContent = alert("BRAVO CupHead Wins");
       }
         
     }
@@ -394,7 +394,7 @@ function checkForWin(){
             redTurnText[i].style.display = "none";
             console.log(redTurnText[i]);
             if (blueScore==12) {
-             blueckTurntext[i].textContent = alert("BRAVO Mugman Wins");
+             //blueckTurntext[i].textContent = alert("BRAVO Mugman Wins");
             }
                    
             
@@ -404,6 +404,10 @@ function checkForWin(){
     changePlayer();
     }
 
+/*Funcion empate */
+
+
+
 /* Funcion para contar puntos*/
 function counterPoints(){
 
@@ -412,13 +416,22 @@ console.log(getPlayerPieces)
 
 PuntosCupHead.innerHTML = blueScore;
 console.log(blueScore);
+
 }
 if(getPlayerPieces)  {
     
     PuntosMugman.innerHTML = redScore;
     console.log(redScore);
 }
+//Mensaje ganador rojo
+if (blueScore == 12) {
+    alert("BRAVO CupHead Wins");
+}
 
+//Mensaje ganador azul
+else if (redScore == 12) {
+    alert("BRAVO Mugman Wins");
+}
 }
 
 
