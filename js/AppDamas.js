@@ -380,10 +380,10 @@ function checkForWin(){
       redTurnText[i].style.color = "black";
       blueckTurntext[i].style.display = "none"; 
       console.log(blueckTurntext[i]);
-      if (redScore==12) {
-        redTurnText[i].textContent = "BRAVO CupHead Wins"; 
+      
+      if(redScore==12){
+        redTurnText[i].textContent = alert("BRAVO CupHead Wins");
       }
-    
         
     }
     } else if (redScore === counterPoints) {
@@ -394,9 +394,9 @@ function checkForWin(){
             redTurnText[i].style.display = "none";
             console.log(redTurnText[i]);
             if (blueScore==12) {
-            blueckTurntext[i].textContent = "BRAVO Mugman Wins";
+             blueckTurntext[i].textContent = alert("BRAVO Mugman Wins");
             }
-            
+                   
             
         }
     }
@@ -439,6 +439,21 @@ function changePlayer() {
     givePiecesEventListeners();
     
 }
+
+//Creo array vacio, luego players que me permita luego guardar nombre jugadores
+let players = []
+const addPlayer = (ev) =>{
+    ev.preventDefault();
+
+    let player ={
+        player1: document.getElementById('player1').value,
+        player2:document.getElementById('player2').value
+    }
+    players.push(player);
+console.warn('added' , {players});
+}
+
+document.getElementById('btn').addEventListener('click',addPlayer);
 
 //Creo la funcion para enviar por metodo fetch
 function SendData(url, objFicha) {
@@ -501,7 +516,6 @@ function LoadCheckpoint(){
    
   
 }  
-
 
 
 /* Funcion para cargar y dibujar tablero*/ 
@@ -581,4 +595,6 @@ var loadSavedGamesData = function() {
 function restartGame() {
     location.reload();
 }
+
+
 
